@@ -1,0 +1,41 @@
+<div class="card">
+<div class="card-body">
+<h3 class="text-center">
+Listado de Pacientes
+</h3>
+<br>
+<table id="tabla"class="table table-bordered table-responsive">
+<thead class="thead-dark">
+<tr>
+<th scope="col">Identificador</th>
+<th scope="col">Nombre</th>
+<th scope="col">Numero de DUI</th>
+<th scope="col">Mascota</th>
+<th scope="col">Tratamiento</th>
+<th scope="col">Medicamento</th>
+<th scope="col">Visita</th>
+<th scope="col">Costo</th>
+<th scope="col">Operacion</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let paciente of pacienteList">
+<td>{{paciente.$key}}</td>
+<td>{{paciente.name}}</td>            
+<td>{{paciente.dui}}</td>
+<td>{{paciente.mascota}}</td>
+<td>{{paciente.tratamiento}}</td>
+<td>{{paciente.medicamento}}</td>
+<td>{{paciente.visita}}</td>
+<td>{{paciente.costo}}</td>
+<td>
+<button type="button" class="btn btn-success" (click)="onEdit(paciente)">Editar</button>
+<br>
+<br>
+<button type="button" class="btn btn-danger" (click)="onDelete(paciente.$key)">Borrar</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
